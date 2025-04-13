@@ -121,6 +121,7 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
+    padding-top: 80px;
 }
 
 .hero::before {
@@ -380,6 +381,10 @@ footer {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 60px;
+    }
+    
     .navbar {
         flex-direction: row;
         padding: 1rem;
