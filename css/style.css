@@ -382,7 +382,7 @@ footer {
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .hero {
-        padding-top: 60px;
+        padding-top: 80px;
     }
     
     .navbar {
