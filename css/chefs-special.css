@@ -1,0 +1,170 @@
+.chefs-special {
+    padding: 120px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.special-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.special-header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.special-intro {
+    font-size: 1.2rem;
+    color: #131111;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.special-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.special-image {
+    position: relative;
+}
+
+.special-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.special-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(15deg);
+}
+
+.special-badge span:first-child {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+.special-badge span:last-child {
+    font-size: 1rem;
+    margin-top: -5px;
+}
+
+.special-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.special-details h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #111111;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: #181717;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.special-details h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #1b1b1b;
+    margin: 2rem 0 1rem;
+}
+
+.ingredients ul,
+.instructions ol {
+    padding-left: 1.5rem;
+}
+
+.ingredients li,
+.instructions li {
+    margin-bottom: 0.8rem;
+    color: #131212;
+    line-height: 1.6;
+}
+
+.special-notes {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.special-notes p {
+    color: #0f0e0e;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .special-content {
+        grid-template-columns: 1fr;
+    }
+
+    .special-image {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chefs-special {
+        padding: 100px 3% 40px;
+    }
+
+    .special-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .special-intro {
+        font-size: 1rem;
+    }
+
+    .special-badge {
+        width: 80px;
+        height: 80px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .special-badge span:first-child {
+        font-size: 1.2rem;
+    }
+
+    .special-badge span:last-child {
+        font-size: 0.9rem;
+    }
+
+    .special-details {
+        padding: 1.5rem;
+    }
+
+    .special-details h2 {
+        font-size: 2rem;
+    }
+} 

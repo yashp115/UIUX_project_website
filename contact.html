@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Comfort Foods</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="recipes.html">Comfort Foods</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Welcome</a>
+            <div class="dropdown">
+                <a href="recipes.html" class="dropdown-link">Recipes</a>
+                <button class="dropdown-button">▼</button>
+                <div class="dropdown-content">
+                    <a href="starter-recipe.html">Starter</a>
+                    <a href="main-course-recipe.html">Main Course</a>
+                    <a href="dessert-recipe.html">Dessert</a>
+                </div>
+            </div>
+            <a href="chefs-special.html">Chef's Special</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="signup.html" class="nav-button">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Send us your questions, suggestions, or just say hello.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-section">
+                    <h2>Get in Touch</h2>
+                    <div class="info-item">
+                        <span class="label">Email:</span>
+                        <a href="mailto:info@comfortfoods.com">info@comfortfoods.com</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Phone:</span>
+                        <a href="tel:+91-9898-4930">+91 9898 4930</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Address:</span>
+                        <address>
+                            Comfort Foods HQ,<br>
+                            Plot No. 555, Streetwise Apartments,<br>
+                            Food Street, Pune, Maharashtra
+                        </address>
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <h2>Follow Us</h2>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+
+                <div class="hours-section">
+                    <h2>Business Hours</h2>
+                    <div class="hours">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday:</span>
+                            <span class="time">9:00 AM to 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday:</span>
+                            <span class="time">10:00 AM to 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday:</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Comfort Foods. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Handle dropdowns in mobile view
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

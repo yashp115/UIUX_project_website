@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masala Veg Toast - Comfort Foods</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recipe-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/recipes-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+        }
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="recipes.html">Comfort Foods</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Welcome</a>
+            <div class="dropdown">
+                <a href="recipes.html" class="dropdown-link">Recipes</a>
+                <button class="dropdown-button">▼</button>
+                <div class="dropdown-content">
+                    <a href="starter-recipe.html">Starter</a>
+                    <a href="main-course-recipe.html">Main Course</a>
+                    <a href="dessert-recipe.html">Dessert</a>
+                </div>
+            </div>
+            <a href="chefs-special.html">Chef's Special</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="signup.html" class="nav-button">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="recipe-detail">
+        <div class="recipe-header">
+            <h1>Masala Veg Toast</h1>
+            <div class="recipe-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Prep Time:</span>
+                    <span class="meta-value">15 mins</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Cook Time:</span>
+                    <span class="meta-value">10 mins</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Servings:</span>
+                    <span class="meta-value">4</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-content">
+            <div class="recipe-image">
+                <img src="images/starter.jpg" alt="Masala Veg Toast">
+            </div>
+
+            <div class="recipe-instructions">
+                <section class="ingredients">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>4 slices of bread</li>
+                        <li>1 small onion (chopped)</li>
+                        <li>1 small tomato (chopped)</li>
+                        <li>1 small capsicum (chopped)</li>
+                        <li>1 green chili (optional)</li>
+                        <li>1/2 tsp garam masala powder</li>
+                        <li>1 tsp butter or oil</li>
+                        <li>Salt to taste</li>
+                    </ul>
+                </section>
+
+                <section class="method">
+                    <h2>Instructions</h2>
+                    <ol>
+                        <li>Mix chopped veggies with pepper and chili powder in a bowl.</li>
+                        <li>Spread the mixture over bread slices.</li>
+                        <li>Heat a pan with butter and toast the bread on the veggie side first.</li>
+                        <li>Flip and toast the other side lightly. Serve hot with ketchup or chutney.</li>
+                    </ol>
+                </section>
+
+                <section class="tips">
+                    <h2>Chef's Tips</h2>
+                    <ul>
+                        <li>Use day-old bread for better toasting</li>
+                        <li>Chop vegetables finely for better distribution</li>
+                        <li>Add cheese on top for an extra indulgent version</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Comfort Foods. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Handle dropdowns in mobile view
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

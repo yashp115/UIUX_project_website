@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Comfort Foods</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/recipes-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: -1;
+        }
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 110px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .about-section h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+        }
+        .about-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="recipes.html">Comfort Foods</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Welcome</a>
+            <div class="dropdown">
+                <a href="recipes.html" class="dropdown-link">Recipes</a>
+                <button class="dropdown-button">▼</button>
+                <div class="dropdown-content">
+                    <a href="starter-recipe.html">Starter</a>
+                    <a href="main-course-recipe.html">Main Course</a>
+                    <a href="dessert-recipe.html">Dessert</a>
+                </div>
+            </div>
+            <a href="chefs-special.html">Chef's Special</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="signup.html" class="nav-button">Sign Up</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>Welcome to Comfort Foods, where we believe that good food brings people together. Our journey began with a simple idea: to create delicious, comforting meals that remind you of home.</p>
+            <p>Founded in 2020, Comfort Foods has grown from a small family kitchen to a beloved destination for food lovers. We specialize in creating recipes that are not only delicious but also easy to prepare, making gourmet cooking accessible to everyone.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>At Comfort Foods, our mission is to inspire people to cook and enjoy good food together. We believe that cooking should be fun, accessible, and rewarding. Our recipes are carefully crafted to be both delicious and achievable, whether you're a beginner or an experienced cook.</p>
+            <p>We're committed to using quality ingredients and sharing our knowledge to help you create memorable meals for your loved ones.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Comfort Foods. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Handle dropdowns in mobile view
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

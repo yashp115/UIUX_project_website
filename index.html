@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfort Foods - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="recipes.html">Comfort Foods</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Welcome</a>
+            <div class="dropdown">
+                <a href="recipes.html" class="dropdown-link">Recipes</a>
+                <button class="dropdown-button">▼</button>
+                <div class="dropdown-content">
+                    <a href="starter-recipe.html">Starter</a>
+                    <a href="main-course-recipe.html">Main Course</a>
+                    <a href="dessert-recipe.html">Dessert</a>
+                </div>
+            </div>
+            <a href="chefs-special.html">Chef's Special</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="signup.html" class="nav-button">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Comfort Foods</h1>
+            <p>Discover delicious recipes that feel like home</p>
+            <div class="auth-buttons">
+                <div class="button-group">
+                    <a href="login.html" class="btn-primary">Login</a>
+                    <a href="signup.html" class="btn-secondary">Sign Up</a>
+                </div>
+                <a href="recipes.html" class="btn-skip">Skip to Recipes</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Comfort Foods. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Handle dropdowns in mobile view
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
